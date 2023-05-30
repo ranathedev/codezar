@@ -1,0 +1,27 @@
+@import "styles/common";
+
+.usefulLinks {
+  @extend .flexCol;
+  gap: 1.5rem;
+  width: max-content;
+  font-family: "DM Sans", sans-serif;
+
+  .title {
+    color: #0f2137;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .list {
+    list-style: none;
+    @extend .flexCol;
+    gap: 1rem;
+    color: #02073e;
+    font-size: 15px;
+
+    .link {
+      @extend .alignCen;
+      gap: 10px;
+    }
+  }
+}
