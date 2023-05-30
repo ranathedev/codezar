@@ -1,0 +1,13 @@
+@import "styles/common";
+
+.featureSec {
+  @extend .flexCenter;
+  width: 100%;
+  padding: 70px 0;
+  background: #f9fafc;
+
+  .heroSec {
+    gap: 150px;
+    background: transparent;
+  }
+}

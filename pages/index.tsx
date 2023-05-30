@@ -1,7 +1,7 @@
 import Head from "next/head";
 
+import FeaturesSec from "components/feature-section";
 import Header from "components/header";
-import HeroSection from "components/hero-section";
 
 export default function Home() {
   return (
@@ -13,7 +13,25 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <HeroSection variant="right" link={{ title: "Explore", href: "#" }} />
+        <FeaturesSec
+          features={[
+            {
+              src: "/icons.png",
+              title: "Trusted marketplace",
+              desc: "Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.",
+            },
+            {
+              src: "/icons.png",
+              title: "Trusted marketplace",
+              desc: "Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.",
+            },
+            {
+              src: "/icons.png",
+              title: "Trusted marketplace",
+              desc: "Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.",
+            },
+          ]}
+        />
       </main>
     </>
   );
