@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import FeaturesSec from "components/feature-section";
+import BottomBanner from "components/bottom-banner";
 import Header from "components/header";
 
 export default function Home() {
@@ -13,25 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <FeaturesSec
-          features={[
-            {
-              src: "/icons.png",
-              title: "Trusted marketplace",
-              desc: "Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.",
-            },
-            {
-              src: "/icons.png",
-              title: "Trusted marketplace",
-              desc: "Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.",
-            },
-            {
-              src: "/icons.png",
-              title: "Trusted marketplace",
-              desc: "Our homes are designed to be move-in ready. Think furnished common areas, super fast wifi, and flexible leases.",
-            },
-          ]}
-        />
+        <BottomBanner />
       </main>
     </>
   );
