@@ -4,6 +4,11 @@ import clsx from "clsx";
 
 import UsefulLinks from "components/useful-links";
 
+import DribbbleIcon from "assets/dribbble.svg";
+import FacebookIcon from "assets/facebook.svg";
+import GithubIcon from "assets/github.svg";
+import TwitterIcon from "assets/twitter.svg";
+
 import stl from "./Footer.module.scss";
 
 interface Props {
@@ -28,9 +33,33 @@ const Footer = ({ customClass }: Props) => {
           <p className={stl.copyright}>Copyright by 2023 CodeZar.</p>
         </div>
         <UsefulLinks />
-        <UsefulLinks />
-        <UsefulLinks />
-        <UsefulLinks />
+        <UsefulLinks
+          title="Our Information"
+          links={[
+            { name: "Return Policy", href: "#" },
+            { name: "Privacy Policy", href: "#" },
+            { name: "Terms and Conditons", href: "#" },
+            { name: "Site Map", href: "#" },
+          ]}
+        />
+        <UsefulLinks
+          title="My Account"
+          links={[
+            { name: "Press Inquiries", href: "#" },
+            { name: "Socail Media", href: "#" },
+            { name: "Directories", href: "#" },
+            { name: "Images & B-roll", href: "#" },
+          ]}
+        />
+        <UsefulLinks
+          title="Connect"
+          links={[
+            { name: "Dribbble", href: "#", icon: <DribbbleIcon /> },
+            { name: "Facebook", href: "#", icon: <FacebookIcon /> },
+            { name: "Github", href: "#", icon: <GithubIcon /> },
+            { name: "Twitter", href: "#", icon: <TwitterIcon /> },
+          ]}
+        />
       </div>
     </footer>
   );

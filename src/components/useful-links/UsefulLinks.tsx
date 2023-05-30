@@ -5,7 +5,7 @@ import stl from "./UsefulLinks.module.scss";
 
 interface Props {
   title: string;
-  links: Array<{ name: string; href: string; icon: ReactNode }>;
+  links: Array<{ name: string; href: string; icon?: ReactNode }>;
 }
 
 const UsefulLinks = ({ title, links }: Props) => {

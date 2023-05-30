@@ -1,18 +1,17 @@
-import React from "react";
-import Image from "next/image";
+import React, { ReactNode } from "react";
 
 import stl from "./FeatureItem.module.scss";
 
 interface Props {
-  src: string;
+  icon: ReactNode;
   title: string;
   desc: string;
 }
 
-const FeatureItem = ({ src, title, desc }: Props) => {
+const FeatureItem = ({ icon, title, desc }: Props) => {
   return (
     <div className={stl.featureItem}>
-      <Image src={src} width={50} height={50} alt="img" className={stl.img} />
+      <span className={stl.icon}>{icon}</span>
       <div className={stl.content}>
         <span className={stl.title}>{title}</span>
         <p className={stl.desc}>{desc}</p>
