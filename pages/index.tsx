@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import Header from "components/header";
+import HeroSection from "components/hero-section";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
+        <HeroSection variant="right" link={{ title: "Explore", href: "#" }} />
       </main>
     </>
   );

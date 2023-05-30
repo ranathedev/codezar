@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap");
 @import "styles/common";
 
 .header {
   position: absolute;
-  top: 0;
+  top: 10px;
   @extend .flexColCen;
   justify-content: flex-start;
   height: 45px;
@@ -29,7 +30,9 @@
   .menu {
     @extend .flexCenter;
     gap: 12px;
+    color: #0f2137;
     font-weight: 500;
+    font-family: "DM Sans", sans-serif;
 
     a {
       position: relative;
@@ -115,7 +118,8 @@
 }
 
 .expand {
-  height: 190px;
+  height: 200px;
+  border-bottom: 1px solid #f1f1f1;
 
   .list {
     display: flex;
