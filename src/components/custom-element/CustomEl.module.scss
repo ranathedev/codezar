@@ -1,0 +1,21 @@
+@import "styles/common";
+
+.customEl {
+  @extend .flexCol;
+  gap: 1rem;
+  width: 100%;
+
+  .sponsor {
+    @extend .alignCen;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    max-width: 550px;
+    width: 100%;
+    padding: 10px 0;
+    margin-left: 5px;
+    color: rgb(86, 98, 114, 0.6);
+    font-size: 1rem;
+    font-family: "DM Sans", sans-serif;
+  }
+}

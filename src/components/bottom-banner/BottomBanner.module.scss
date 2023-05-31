@@ -1,7 +1,7 @@
 @import "styles/common";
 
 .banner {
-  position: relative;
+  position: absolute;
   @extend .alignCen;
   padding: 0 1rem;
   max-width: 1200px;
@@ -9,7 +9,7 @@
   min-height: 200px;
   background: #183656;
   border-radius: 10px;
-  margin: 0 10px;
+  margin: 0 auto;
   transition: all 0.3s;
 
   .heading {
@@ -114,11 +114,11 @@
 @media screen and (max-width: 400px) {
   .banner {
     .iconContainer {
-      right: 35%;
+      right: 42%;
     }
 
     button {
-      right: 20%;
+      right: 30%;
     }
   }
 }

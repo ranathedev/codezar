@@ -3,8 +3,8 @@
 .footer {
   @extend .flexCenter;
   width: 100%;
-  min-height: 460px;
-  padding: 1rem 10px;
+  min-height: 400px;
+  padding: 130px 10px 1rem;
   background: #f9fafc;
 
   a:hover {
@@ -50,5 +50,17 @@
         color: rgb(15, 33, 55, 60%);
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-top: 220px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    padding-top: 260px;
   }
 }

@@ -17,7 +17,7 @@ interface Props {
   heading: string;
   desc: string;
   imgSrc?: string;
-  features?: Array<{ src: string; title: string; desc: string }>;
+  features?: Array<{ icon: ReactNode; title: string; desc: string }>;
 }
 
 const HeroSection = ({
@@ -59,7 +59,7 @@ const HeroSection = ({
           {features?.map((item, i) => (
             <FeatureItem
               key={i}
-              src={item.src}
+              icon={item.icon}
               title={item.title}
               desc={item.desc}
             />
@@ -72,7 +72,7 @@ const HeroSection = ({
 
 HeroSection.defaultProps = {
   customElement: "",
-  variant: "col",
+  variant: "right",
   heading: "We are committed to using fact-based knowledge to our customers",
   desc: "Get your tests delivered at let home collect sample from the victory of the managments that supplies best design system guidelines ever. Get your tests delivered at let home collect sample.",
 };
