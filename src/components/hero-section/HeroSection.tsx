@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 
+import FeatureItem from "components/feature-item";
+
 import NextIcon from "assets/arrow-next.svg";
 
 import stl from "./HeroSection.module.scss";
@@ -14,6 +16,8 @@ interface Props {
   customClass?: string;
   heading: string;
   desc: string;
+  imgSrc?: string;
+  features?: Array<{ src: string; title: string; desc: string }>;
 }
 
 const HeroSection = ({
@@ -22,6 +26,8 @@ const HeroSection = ({
   link,
   customElement,
   variant,
+  imgSrc,
+  features,
   customClass,
 }: Props) => {
   return (
@@ -36,16 +42,30 @@ const HeroSection = ({
           </Link>
         )}
       </div>
-      <div className={stl.imageContainer}>
-        <Image
-          priority
-          src="/Illustration.png"
-          width={100}
-          height={100}
-          alt="illustration"
-          className={stl.img}
-        />
-      </div>
+      {imgSrc && (
+        <div className={stl.imageContainer}>
+          <Image
+            priority
+            src={imgSrc}
+            width={100}
+            height={100}
+            alt="illustration"
+            className={stl.img}
+          />
+        </div>
+      )}
+      {features && (
+        <div className={stl.features}>
+          {features?.map((item, i) => (
+            <FeatureItem
+              key={i}
+              src={item.src}
+              title={item.title}
+              desc={item.desc}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
