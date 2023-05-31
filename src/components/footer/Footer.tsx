@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 import UsefulLinks from "components/useful-links";
 
@@ -15,54 +16,52 @@ interface Props {
   customClass?: string;
 }
 
-const Footer = ({ customClass }: Props) => {
-  return (
-    <footer className={clsx(stl.footer, customClass)}>
-      <div className={stl.container}>
-        <div className={stl.about}>
-          <div className={stl.main}>CodeZar</div>
-          <div className={stl.termsPrivacy}>
-            <Link href="#" className={stl.link}>
-              Terms of use
-            </Link>
-            <span className={stl.divider}></span>
-            <Link href="#" className={stl.link}>
-              Privacy
-            </Link>
-          </div>
-          <p className={stl.copyright}>Copyright by 2023 CodeZar.</p>
+const Footer = ({ customClass }: Props) => (
+  <motion.footer className={clsx(stl.footer, customClass)}>
+    <div className={stl.container}>
+      <div className={stl.about}>
+        <div className={stl.main}>CodeZar</div>
+        <div className={stl.termsPrivacy}>
+          <Link href="#" className={stl.link}>
+            Terms of use
+          </Link>
+          <span className={stl.divider}></span>
+          <Link href="#" className={stl.link}>
+            Privacy
+          </Link>
         </div>
-        <UsefulLinks />
-        <UsefulLinks
-          title="Our Information"
-          links={[
-            { name: "Return Policy", href: "#" },
-            { name: "Privacy Policy", href: "#" },
-            { name: "Terms and Conditons", href: "#" },
-            { name: "Site Map", href: "#" },
-          ]}
-        />
-        <UsefulLinks
-          title="My Account"
-          links={[
-            { name: "Press Inquiries", href: "#" },
-            { name: "Socail Media", href: "#" },
-            { name: "Directories", href: "#" },
-            { name: "Images & B-roll", href: "#" },
-          ]}
-        />
-        <UsefulLinks
-          title="Connect"
-          links={[
-            { name: "Dribbble", href: "#", icon: <DribbbleIcon /> },
-            { name: "Facebook", href: "#", icon: <FacebookIcon /> },
-            { name: "Github", href: "#", icon: <GithubIcon /> },
-            { name: "Twitter", href: "#", icon: <TwitterIcon /> },
-          ]}
-        />
+        <p className={stl.copyright}>Copyright by 2023 CodeZar.</p>
       </div>
-    </footer>
-  );
-};
+      <UsefulLinks />
+      <UsefulLinks
+        title="Our Information"
+        links={[
+          { name: "Return Policy", href: "#" },
+          { name: "Privacy Policy", href: "#" },
+          { name: "Terms and Conditons", href: "#" },
+          { name: "Site Map", href: "#" },
+        ]}
+      />
+      <UsefulLinks
+        title="My Account"
+        links={[
+          { name: "Press Inquiries", href: "#" },
+          { name: "Socail Media", href: "#" },
+          { name: "Directories", href: "#" },
+          { name: "Images & B-roll", href: "#" },
+        ]}
+      />
+      <UsefulLinks
+        title="Connect"
+        links={[
+          { name: "Dribbble", href: "#", icon: <DribbbleIcon /> },
+          { name: "Facebook", href: "#", icon: <FacebookIcon /> },
+          { name: "Github", href: "#", icon: <GithubIcon /> },
+          { name: "Twitter", href: "#", icon: <TwitterIcon /> },
+        ]}
+      />
+    </div>
+  </motion.footer>
+);
 
 export default Footer;
