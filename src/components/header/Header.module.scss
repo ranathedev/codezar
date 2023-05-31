@@ -105,8 +105,10 @@
         position: relative;
         padding: 0 10px;
 
-        &:hover {
-          color: #f94962;
+        @media (hover: hover) {
+          &:hover {
+            color: #f94962;
+          }
         }
       }
 
