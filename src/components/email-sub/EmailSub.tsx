@@ -25,6 +25,7 @@ const EmailSub = () => {
         name="email"
         placeholder="Enter Email address"
         className={stl.input}
+        onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
         onChange={(e) => setValue(e.target.value)}
       />
       <button className={stl.btn} onClick={handleSubmit}>
