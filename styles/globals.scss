@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap");
 @import "styles/common";
 
 * {
@@ -14,14 +13,19 @@ body {
 }
 
 body {
-  background: #f1f1f1;
-  font-family: "DM Sans", sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 main {
   width: 100%;
   min-height: 100vh;
   @extend .flexCenter;
+  padding: 1rem;
+  padding-top: 100px;
 }
 
 a {

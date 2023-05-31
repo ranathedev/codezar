@@ -1,0 +1,147 @@
+@import "styles/common";
+
+.heroSection {
+  @extend .alignCen;
+  gap: 1rem;
+  max-width: 1100px;
+  width: 100%;
+  height: 750px;
+  background: #fff;
+
+  .content {
+    @extend .flexCol;
+    gap: 1rem;
+    width: 50%;
+
+    .main {
+      color: #0f2137;
+      font-size: 40px;
+      line-height: 60px;
+      font-family: "Bree Serif", serif;
+    }
+
+    .desc {
+      color: #02073e;
+      font-size: 17px;
+      line-height: 2.5rem;
+      font-family: "DM Sans", sans-serif;
+    }
+
+    a {
+      position: relative;
+      @extend .flexCenter;
+      width: max-content;
+      gap: 10px;
+      padding: 5px;
+      color: #3183ff;
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: "DM Sans", sans-serif;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        left: 0;
+        width: 0;
+        border-bottom: 2px solid #3183ff;
+        transition: all 0.3s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .imageContainer {
+    width: 50%;
+
+    .img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.left {
+  .content {
+    order: 0;
+  }
+
+  .imageContainer {
+    order: 1;
+  }
+}
+
+.left {
+  .content {
+    order: 1;
+  }
+
+  .imageContainer {
+    order: 0;
+  }
+}
+
+.col {
+  flex-direction: column;
+  gap: 3rem;
+  height: 100%;
+
+  .content {
+    max-width: 800px;
+    width: 90%;
+
+    .main,
+    .desc {
+      text-align: center;
+    }
+  }
+
+  .imageContainer {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .heroSection .content {
+    .main {
+      font-size: 30px;
+      line-height: 50px;
+    }
+
+    .desc {
+      line-height: 1.8rem;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroSection {
+    flex-direction: column;
+    height: 100%;
+    padding: 10px 0;
+
+    .content {
+      width: 80%;
+    }
+
+    .imageContainer {
+      width: 70%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heroSection {
+    .content {
+      width: 100%;
+    }
+
+    .imageContainer {
+      width: 90%;
+    }
+  }
+}

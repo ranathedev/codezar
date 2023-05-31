@@ -12,8 +12,12 @@ interface Props {
 
 const Header = ({ links }: Props) => {
   const [active, setIsActive] = React.useState("Get Started");
-  const [isExpand, setIsExpand] = React.useState(true);
-  const [width, setWidth] = React.useState(1000);
+  const [isExpand, setIsExpand] = React.useState(false);
+  const [width, setWidth] = React.useState(500);
+
+  useEffect(() => {
+    width > 640 && setIsExpand(false);
+  }, [width]);
 
   useEffect(() => {
     function measureWidth() {
@@ -23,10 +27,6 @@ const Header = ({ links }: Props) => {
     window.addEventListener("resize", measureWidth);
     return () => window.removeEventListener("resize", measureWidth);
   }, []);
-
-  useEffect(() => {
-    width >= 640 && setIsExpand(false);
-  }, [width]);
 
   return (
     <header className={clsx(stl.header, isExpand ? stl.expand : "")}>
