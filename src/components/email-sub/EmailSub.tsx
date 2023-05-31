@@ -6,7 +6,15 @@ const EmailSub = () => {
   const [value, setValue] = React.useState("");
 
   const handleSubmit = () => {
-    console.log(value);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (value === "") {
+      alert("Email should not be Empty!");
+    } else if (!emailRegex.test(value)) {
+      alert("Email address not valid!");
+    } else {
+      alert(`Thank you for subscribing!\n \n Email: ${value}`);
+    }
     setValue("");
   };
 
