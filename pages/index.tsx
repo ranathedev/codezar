@@ -9,6 +9,7 @@ import Footer from "components/footer";
 import Header from "components/header";
 import HeroSection from "components/hero-section";
 import ProgressBar from "components/progress-bar";
+import ScrollBtn from "components/scroll-top-btn";
 
 import AwardIcon from "assets/award.svg";
 import GiftIcon from "assets/gift.svg";
@@ -21,6 +22,7 @@ import stl from "./index.module.scss";
 
 export default function Home() {
   const [scrollProgress, setScrollProgress] = React.useState(0);
+  const [isVisible, setIsVisible] = React.useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,11 +32,21 @@ export default function Home() {
         document.documentElement.scrollHeight - window.innerHeight;
       const progress = (scrollTop / totalHeight) * 100;
       setScrollProgress(progress);
+
+      if (scrollTop > 500) setIsVisible(true);
+      else setIsVisible(false);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -44,6 +56,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={stl.main}>
+        <ScrollBtn handleOnClick={scrollToTop} isVisible={isVisible} />
         <ProgressBar progress={scrollProgress} />
         <Header />
         <HeroSection

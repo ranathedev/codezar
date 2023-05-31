@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 import UsefulLinks from "components/useful-links";
 
-import DribbbleIcon from "assets/dribbble.svg";
 import FacebookIcon from "assets/facebook.svg";
 import GithubIcon from "assets/github.svg";
+import LinkedInIcon from "assets/linkedIn.svg";
 import TwitterIcon from "assets/twitter.svg";
 
 import stl from "./Footer.module.scss";
@@ -54,10 +54,26 @@ const Footer = ({ customClass }: Props) => (
       <UsefulLinks
         title="Connect"
         links={[
-          { name: "Dribbble", href: "#", icon: <DribbbleIcon /> },
-          { name: "Facebook", href: "#", icon: <FacebookIcon /> },
-          { name: "Github", href: "#", icon: <GithubIcon /> },
-          { name: "Twitter", href: "#", icon: <TwitterIcon /> },
+          {
+            name: "LinkedIn",
+            href: "https://www.linkedin.com/in/ranathedev/",
+            icon: <LinkedInIcon />,
+          },
+          {
+            name: "Facebook",
+            href: "https://www.facebook.com/ranathedev",
+            icon: <FacebookIcon />,
+          },
+          {
+            name: "Github",
+            href: "https://github.com/ranaintizar",
+            icon: <GithubIcon />,
+          },
+          {
+            name: "Twitter",
+            href: "https://twitter.com/ranathedev",
+            icon: <TwitterIcon />,
+          },
         ]}
       />
     </div>
