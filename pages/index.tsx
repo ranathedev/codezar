@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import BottomBanner from "components/bottom-banner";
+import EmailSub from "components/email-sub";
 import Header from "components/header";
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main>
         <Header />
-        <BottomBanner />
+        <EmailSub />
       </main>
     </>
   );
