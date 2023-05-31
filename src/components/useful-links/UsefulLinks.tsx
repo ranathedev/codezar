@@ -26,7 +26,11 @@ const UsefulLinks = ({ title, links }: Props) => {
       >
         {links.map((item, i) => (
           <li key={i}>
-            <Link href={item.href} className={stl.link}>
+            <Link
+              href={item.href}
+              target={item.href === "#" ? "_self" : "_blank"}
+              className={stl.link}
+            >
               {item.icon}
               {item.name}
             </Link>
