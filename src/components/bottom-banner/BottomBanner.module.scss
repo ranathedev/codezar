@@ -1,0 +1,122 @@
+@import "styles/common";
+
+.banner {
+  position: relative;
+  @extend .alignCen;
+  padding: 0 1rem;
+  max-width: 1200px;
+  width: 100%;
+  min-height: 200px;
+  background: #183656;
+  border-radius: 10px;
+  margin: 0 10px;
+
+  .heading {
+    color: #fff;
+    font-size: 2rem;
+    font-family: "Bree Serif", serif;
+    width: 45%;
+  }
+
+  .iconContainer {
+    position: absolute;
+    right: 4.5rem;
+    @extend .alignCen;
+    gap: 5rem;
+  }
+
+  button {
+    position: absolute;
+    outline: none;
+    border: none;
+    @extend .flexCenter;
+    height: 50px;
+    padding: 0 1rem;
+    background: #fff;
+    color: #183656;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 4px;
+    right: 2.1rem;
+
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .banner {
+    padding: 1rem 10px;
+    height: 270px;
+    align-items: flex-start;
+    justify-content: center;
+
+    .heading {
+      max-width: 400px;
+      width: 90%;
+      font-size: 1.8rem;
+    }
+
+    .iconContainer {
+      bottom: 10%;
+      right: 18%;
+    }
+
+    button {
+      bottom: 25%;
+      right: 12%;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .banner {
+    .iconContainer {
+      right: 50px;
+      gap: 2rem;
+    }
+
+    button {
+      right: 12px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .banner {
+    height: 320px;
+
+    .heading {
+      font-size: 1.7rem;
+    }
+
+    .iconContainer {
+      bottom: 5%;
+      right: 42%;
+
+      .icon1 {
+        display: none;
+      }
+    }
+
+    button {
+      bottom: 19%;
+      right: 32%;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .banner {
+    .iconContainer {
+      right: 35%;
+    }
+
+    button {
+      right: 20%;
+    }
+  }
+}
