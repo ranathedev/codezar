@@ -10,23 +10,21 @@ interface Props {
   customClass?: string;
 }
 
-const BottomBanner = ({ customClass }: Props) => {
-  return (
-    <div className={clsx(stl.banner, customClass)}>
-      <span className={stl.heading}>
-        Do you have any question? Feel free to contact us
+const BottomBanner = ({ customClass }: Props) => (
+  <div className={clsx(stl.banner, customClass)}>
+    <span className={stl.heading}>
+      Do you have any question? Feel free to contact us
+    </span>
+    <div className={stl.iconContainer}>
+      <span className={stl.icon1}>
+        <Icon1 />
       </span>
-      <div className={stl.iconContainer}>
-        <span className={stl.icon1}>
-          <Icon1 />
-        </span>
-        <span>
-          <Icon2 />
-        </span>
-      </div>
-      <button>Contact us Now</button>
+      <span>
+        <Icon2 />
+      </span>
     </div>
-  );
-};
+    <button onClick={() => console.log("Clicked...")}>Contact us Now</button>
+  </div>
+);
 
 export default BottomBanner;

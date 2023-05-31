@@ -11,18 +11,16 @@ interface Props {
   desc: string;
 }
 
-const FeaturesSec = ({ features, background, heading, desc }: Props) => {
-  return (
-    <div style={{ background }} className={stl.featureSec}>
-      <HeroSection
-        variant="col"
-        heading={heading}
-        desc={desc}
-        customClass={stl.heroSec}
-        features={features}
-      />
-    </div>
-  );
-};
+const FeaturesSec = ({ features, background, heading, desc }: Props) => (
+  <div style={{ background }} className={stl.featureSec}>
+    <HeroSection
+      variant="col"
+      heading={heading}
+      desc={desc}
+      customClass={stl.heroSec}
+      features={features}
+    />
+  </div>
+);
 
 export default FeaturesSec;

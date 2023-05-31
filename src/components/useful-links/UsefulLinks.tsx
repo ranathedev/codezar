@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 import stl from "./UsefulLinks.module.scss";
 
@@ -9,10 +10,20 @@ interface Props {
 }
 
 const UsefulLinks = ({ title, links }: Props) => {
+  const [animation, setAnimation] = React.useState(false);
+
   return (
-    <div className={stl.usefulLinks}>
+    <motion.div
+      onViewportEnter={() => setAnimation(true)}
+      className={stl.usefulLinks}
+    >
       <div className={stl.title}>{title}</div>
-      <ul className={stl.list}>
+      <motion.ul
+        initial={{ y: 50, opacity: 0 }}
+        animate={animation ? { y: 0, opacity: 1 } : undefined}
+        transition={{ type: "spring", delay: 0.3 }}
+        className={stl.list}
+      >
         {links.map((item, i) => (
           <li key={i}>
             <Link href={item.href} className={stl.link}>
@@ -21,8 +32,8 @@ const UsefulLinks = ({ title, links }: Props) => {
             </Link>
           </li>
         ))}
-      </ul>
-    </div>
+      </motion.ul>
+    </motion.div>
   );
 };
 

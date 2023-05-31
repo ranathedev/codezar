@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import Head from "next/head";
 
 import BottomBanner from "components/bottom-banner";
@@ -7,6 +8,7 @@ import FeaturesSec from "components/feature-section";
 import Footer from "components/footer";
 import Header from "components/header";
 import HeroSection from "components/hero-section";
+import ProgressBar from "components/progress-bar";
 
 import AwardIcon from "assets/award.svg";
 import GiftIcon from "assets/gift.svg";
@@ -18,6 +20,22 @@ import TwoIcon from "assets/2.svg";
 import stl from "./index.module.scss";
 
 export default function Home() {
+  const [scrollProgress, setScrollProgress] = React.useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const totalHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
       <Head>
@@ -26,6 +44,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main className={stl.main}>
+        <ProgressBar progress={scrollProgress} />
         <Header />
         <HeroSection
           heading="A Creative way to grow your Exciting Business model"

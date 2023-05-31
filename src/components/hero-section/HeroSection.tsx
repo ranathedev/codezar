@@ -2,6 +2,7 @@ import React, { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
+import { motion } from "framer-motion";
 
 import FeatureItem from "components/feature-item";
 
@@ -30,9 +31,19 @@ const HeroSection = ({
   features,
   customClass,
 }: Props) => {
+  const [animateContent, setAnimateContent] = React.useState(false);
+  const [animateImage, setAnimateImage] = React.useState(false);
+  const [animateFeatures, setAnimateFeatures] = React.useState(false);
+
   return (
     <div className={clsx(stl.heroSection, stl[variant], customClass)}>
-      <div className={stl.content}>
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        className={stl.content}
+        onViewportEnter={() => setAnimateContent(true)}
+        animate={animateContent ? { y: 0, opacity: 1 } : undefined}
+        transition={{ type: "spring", delay: 0.3 }}
+      >
         <div className={stl.main}>{heading}</div>
         <p className={stl.desc}>{desc}</p>
         {customElement}
@@ -41,9 +52,24 @@ const HeroSection = ({
             {link.title} <NextIcon />
           </Link>
         )}
-      </div>
+      </motion.div>
       {imgSrc && (
-        <div className={stl.imageContainer}>
+        <motion.div
+          initial={
+            (variant === "left" && { x: -300, opacity: 0 }) ||
+            (variant === "right" && { x: 300, opacity: 0 }) ||
+            (variant === "col" && { x: 300, opacity: 0 })
+          }
+          onViewportEnter={() => setAnimateImage(true)}
+          animate={
+            animateImage
+              ? { x: 0, opacity: 1 }
+              : (variant === "left" && { x: -300, opacity: 0 }) ||
+                (variant === "right" && { x: 300, opacity: 0 })
+          }
+          transition={{ type: "spring", delay: 0.6 }}
+          className={stl.imageContainer}
+        >
           <Image
             priority
             src={imgSrc}
@@ -52,19 +78,30 @@ const HeroSection = ({
             alt="illustration"
             className={stl.img}
           />
-        </div>
+        </motion.div>
       )}
       {features && (
-        <div className={stl.features}>
-          {features?.map((item, i) => (
-            <FeatureItem
-              key={i}
-              icon={item.icon}
-              title={item.title}
-              desc={item.desc}
-            />
-          ))}
-        </div>
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          onViewportEnter={() => setAnimateFeatures(true)}
+          animate={animateFeatures ? { y: 0, opacity: 1 } : undefined}
+          transition={{ type: "spring", delay: 0.6 }}
+          className={stl.features}
+        >
+          {features?.map((item, i) => {
+            const value = (i + 1) * 0.2;
+            return (
+              <FeatureItem
+                key={i}
+                icon={item.icon}
+                title={item.title}
+                desc={item.desc}
+                delay={value}
+                animation={animateFeatures}
+              />
+            );
+          })}
+        </motion.div>
       )}
     </div>
   );
