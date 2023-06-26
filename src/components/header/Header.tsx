@@ -31,7 +31,9 @@ const Header = ({ links }: Props) => {
   return (
     <header className={clsx(stl.header, isExpand ? stl.expand : "")}>
       <div className={stl.container}>
-        <h1>CodeZar</h1>
+        <Link href="/">
+          <h1>CodeZar</h1>
+        </Link>
         <div className={stl.menu}>
           {links.map((item, i) => (
             <Link
