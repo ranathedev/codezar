@@ -1,19 +1,19 @@
-import React from "react";
-import Link from "next/link";
-import clsx from "clsx";
-import { motion } from "framer-motion";
+import React from 'react'
+import Link from 'next/link'
+import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
-import UsefulLinks from "components/useful-links";
+import UsefulLinks from 'components/useful-links'
 
-import FacebookIcon from "assets/facebook.svg";
-import GithubIcon from "assets/github.svg";
-import LinkedInIcon from "assets/linkedIn.svg";
-import TwitterIcon from "assets/twitter.svg";
+import FacebookIcon from 'assets/facebook.svg'
+import GithubIcon from 'assets/github.svg'
+import LinkedInIcon from 'assets/linkedIn.svg'
+import TwitterIcon from 'assets/twitter.svg'
 
-import stl from "./Footer.module.scss";
+import stl from './Footer.module.scss'
 
 interface Props {
-  customClass?: string;
+  customClass?: string
 }
 
 const Footer = ({ customClass }: Props) => (
@@ -36,48 +36,48 @@ const Footer = ({ customClass }: Props) => (
       <UsefulLinks
         title="Our Information"
         links={[
-          { name: "Return Policy", href: "#" },
-          { name: "Privacy Policy", href: "#" },
-          { name: "Terms and Conditons", href: "#" },
-          { name: "Site Map", href: "#" },
+          { name: 'Return Policy', href: '#' },
+          { name: 'Privacy Policy', href: '#' },
+          { name: 'Terms and Conditons', href: '#' },
+          { name: 'Site Map', href: '#' },
         ]}
       />
       <UsefulLinks
         title="My Account"
         links={[
-          { name: "Press Inquiries", href: "#" },
-          { name: "Socail Media", href: "#" },
-          { name: "Directories", href: "#" },
-          { name: "Images & B-roll", href: "#" },
+          { name: 'Press Inquiries', href: '#' },
+          { name: 'Socail Media', href: '#' },
+          { name: 'Directories', href: '#' },
+          { name: 'Images & B-roll', href: '#' },
         ]}
       />
       <UsefulLinks
         title="Connect"
         links={[
           {
-            name: "LinkedIn",
-            href: "https://www.linkedin.com/in/ranathedev/",
+            name: 'LinkedIn',
+            href: 'https://linkzar.fly.dev/linkedin',
             icon: <LinkedInIcon />,
           },
           {
-            name: "Facebook",
-            href: "https://www.facebook.com/ranathedev",
+            name: 'Facebook',
+            href: 'https://linkzar.fly.dev/facebook',
             icon: <FacebookIcon />,
           },
           {
-            name: "Github",
-            href: "https://github.com/ranaintizar",
+            name: 'Github',
+            href: 'https://linkzar.fly.dev/github',
             icon: <GithubIcon />,
           },
           {
-            name: "Twitter",
-            href: "https://twitter.com/ranathedev",
+            name: 'Twitter',
+            href: 'https://linkzar.fly.dev/twitter',
             icon: <TwitterIcon />,
           },
         ]}
       />
     </div>
   </motion.footer>
-);
+)
 
-export default Footer;
+export default Footer
