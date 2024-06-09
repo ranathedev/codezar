@@ -56,22 +56,22 @@ const Footer = ({ customClass }: Props) => (
         links={[
           {
             name: 'LinkedIn',
-            href: 'https://linkzar.fly.dev/linkedin',
+            href: 'https://proxar.ranaintizar.com/me/linkedin',
             icon: <LinkedInIcon />,
           },
           {
             name: 'Facebook',
-            href: 'https://linkzar.fly.dev/facebook',
+            href: 'https://proxar.ranaintizar.com/me/facebook',
             icon: <FacebookIcon />,
           },
           {
             name: 'Github',
-            href: 'https://linkzar.fly.dev/github',
+            href: 'https://proxar.ranaintizar.com/me/github',
             icon: <GithubIcon />,
           },
           {
             name: 'Twitter',
-            href: 'https://linkzar.fly.dev/twitter',
+            href: 'https://proxar.ranaintizar.com/me/twitter',
             icon: <TwitterIcon />,
           },
         ]}
